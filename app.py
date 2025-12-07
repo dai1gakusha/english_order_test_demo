@@ -2,19 +2,17 @@ import streamlit as st
 import pandas as pd
 import random
 
-
 def load_questions():
     df = pd.read_csv("english_order_questions.csv")
-    # BOM対策（保険）
+    # BOM対策
     df.columns = df.columns.str.replace('\ufeff', '', regex=False)
     return df
 
-
-# CSV読み込み（※dfはここで初めて定義される）
-df = pd.read_csv("english_order_questions.csv")
-
-# CSV読み込み
+# CSV読み込み（ここだけでOK！）
 df = load_questions()
+
+# 列名確認（デバッグ用）
+st.write("Columns:", df.columns.tolist())
 
 # 初期化
 if "current" not in st.session_state:
