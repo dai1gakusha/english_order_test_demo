@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
-import random
-from utils import load_questions
 
-st.title("英語 並び替え問題（デモ版）")
-st.write("Columns:", df.columns.tolist())
+st.title("英語並び替え問題")
+
+# CSV読み込み（※dfはここで初めて定義される）
+df = pd.read_csv("english_order_questions.csv")
 
 # CSV読み込み
 df = load_questions()
