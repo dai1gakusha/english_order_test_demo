@@ -4,6 +4,7 @@ import random
 from utils import load_questions
 
 st.title("英語 並び替え問題（デモ版）")
+st.write("Columns:", df.columns.tolist())
 
 # CSV読み込み
 df = load_questions()
